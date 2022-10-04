@@ -2,10 +2,10 @@ package transport;
 
 public class Main {
     public static void main(String[] args) {
-        PassangerCar oka = new PassangerCar("Лада", "Ока", 1.0);
-        PassangerCar subaru = new PassangerCar("Subaru", "Impreza", 2.4);
-        PassangerCar mitsu = new PassangerCar("Mitsubishi", "Lancer", 2.5);
-        PassangerCar bmw = new PassangerCar("BMW", "M5", 4.4);
+        PassengerCar oka = new PassengerCar("Лада", "Ока", 1.0);
+        PassengerCar subaru = new PassengerCar("Subaru", "Impreza", 2.4);
+        PassengerCar mitsu = new PassengerCar("Mitsubishi", "Lancer", 2.5);
+        PassengerCar bmw = new PassengerCar("BMW", "M5", 4.4);
 
         CargoCar kamaz = new CargoCar("Камаз", "6520", 11.8);
         CargoCar man = new CargoCar("MAN", "TGS", 9.0);
@@ -16,5 +16,15 @@ public class Main {
         Bus mers = new Bus("Mersedes", "Vito", 4.3);
         Bus kia = new Bus("KIA", "Runner", 5.1);
         Bus faw = new Bus("FAW", "Samurai", 3.9);
+
+        subaru.pitStop();
+        subaru.bestLap();
+        subaru.maxSpeed();
+        man.pitStop();
+        man.bestLap();
+        man.maxSpeed();
+        kia.pitStop();
+        kia.bestLap();
+        kia.maxSpeed();
     }
 }

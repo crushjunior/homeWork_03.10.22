@@ -1,17 +1,17 @@
 package transport;
 
-public class CargoCar extends Car implements Competing{
-    public static final int MAX_SPEED = 222;
-    public static final double BEST_LAP = 1.31;
-    public CargoCar(String brand, String model, Double engineVolume) {
+public class PassengerCar extends Car implements Competing{
+    public static final int MAX_SPEED = 268;
+    public static final double BEST_LAP = 1.21;
+    public PassengerCar(String brand, String model, Double engineVolume) {
         super(brand, model, engineVolume);
     }
 
     protected void startGo() {
-        System.out.println("Проверь прицеп и стартуй!");
+        System.out.println("Газ в полас!");
     }
     protected void finishGo() {
-        System.out.println("Тормози плавно!");
+        System.out.println("Тормози!");
     }
 
     @Override
@@ -24,7 +24,7 @@ public class CargoCar extends Car implements Competing{
 
     @Override
     public void pitStop() {
-        System.out.println("Пит стоп!");
+        System.out.println("Здесь был пит стоп!");
     }
 
     @Override
