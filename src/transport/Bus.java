@@ -19,7 +19,7 @@ public class Bus extends Car implements Competing{
         return "Класс: " + getClass() + ", " +
                 "марка: " + getBrand() +  ", " +
                 "модель: " + getModel() +  ", " +
-                "объём двмгателя: " + getEngineVolume() +  ".";
+                "объём двмигателя: " + getEngineVolume() +  ".";
     }
 
     @Override

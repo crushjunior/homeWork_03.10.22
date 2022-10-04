@@ -1,4 +1,5 @@
 package transport;
+import driver.Driver;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,14 +18,27 @@ public class Main {
         Bus kia = new Bus("KIA", "Runner", 5.1);
         Bus faw = new Bus("FAW", "Samurai", 3.9);
 
+        Driver<PassengerCar> sam = new Driver<>("Самойлов Антон Матвеевич", "B", 5);
+        Driver<Bus> luk = new Driver<>("Лукашенко Юрий Кириллович", "С", 7);
+        Driver<CargoCar> rom = new Driver<>("Рязанов Олег Михайлович", "D", 25);
+
         subaru.pitStop();
         subaru.bestLap();
         subaru.maxSpeed();
+        System.out.println();
         man.pitStop();
         man.bestLap();
         man.maxSpeed();
+        System.out.println();
         kia.pitStop();
         kia.bestLap();
         kia.maxSpeed();
+        System.out.println();
+        sam.raceInfo(bmw);
+        luk.raceInfo(paz);
+        rom.raceInfo(scania);
+        sam.finishGo(oka);
+        sam.startGo(subaru);
+        sam.refuel(mitsu);
     }
 }
