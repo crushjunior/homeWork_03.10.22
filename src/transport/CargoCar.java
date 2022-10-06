@@ -1,10 +1,12 @@
 package transport;
 
 public class CargoCar extends Car implements Competing{
-    public static final int MAX_SPEED = 222;
-    public static final double BEST_LAP = 1.31;
+    private static final int MAX_SPEED = 222;
+    private static final double BEST_LAP = 1.31;
+
     public CargoCar(String brand, String model, Double engineVolume) {
         super(brand, model, engineVolume);
+
     }
 
     protected void startGo() {
@@ -19,7 +21,7 @@ public class CargoCar extends Car implements Competing{
         return "Класс: " + getClass() + ", " +
                 "марка: " + getBrand() +  ", " +
                 "модель: " + getModel() +  ", " +
-                "объём двмгателя: " + getEngineVolume() +  ".";
+                "объём двигателя: " + getEngineVolume() +  ".";
     }
 
     @Override

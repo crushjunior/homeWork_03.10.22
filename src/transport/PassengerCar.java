@@ -1,10 +1,16 @@
 package transport;
 
 public class PassengerCar extends Car implements Competing{
-    public static final int MAX_SPEED = 268;
-    public static final double BEST_LAP = 1.21;
+    private static final int MAX_SPEED = 268;
+    private static final double BEST_LAP = 1.21;
+
+    public enum TypeBody {SEDAN, HATCHBACK, COUPE, UNIVERSAL, OFFROAD, CROSSOVER,PICKUP, VAN, MINIVAN};
+
+
     public PassengerCar(String brand, String model, Double engineVolume) {
         super(brand, model, engineVolume);
+
+
     }
 
     protected void startGo() {
@@ -19,7 +25,7 @@ public class PassengerCar extends Car implements Competing{
         return "Класс: " + getClass() + ", " +
                 "марка: " + getBrand() +  ", " +
                 "модель: " + getModel() +  ", " +
-                "объём двмгателя: " + getEngineVolume() +  ".";
+                "объём двигателя: " + getEngineVolume() +  ".";
     }
 
     @Override

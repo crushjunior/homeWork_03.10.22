@@ -1,10 +1,12 @@
 package transport;
 
 public class Bus extends Car implements Competing{
-    public static final int MAX_SPEED = 201;
-    public static final double BEST_LAP = 1.36;
+    private static final int MAX_SPEED = 201;
+    private static final double BEST_LAP = 1.36;
+
     public Bus(String brand, String model, Double engineVolume) {
         super(brand, model, engineVolume);
+
     }
 
     protected void startGo() {
