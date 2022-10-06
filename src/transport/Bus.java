@@ -3,10 +3,20 @@ package transport;
 public class Bus extends Car implements Competing{
     private static final int MAX_SPEED = 201;
     private static final double BEST_LAP = 1.36;
+    private Capacity capacity;
 
-    public Bus(String brand, String model, Double engineVolume) {
+    public Bus(String brand, String model, Double engineVolume, Capacity capacity) {
         super(brand, model, engineVolume);
+        setCapacity(capacity);
 
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
     }
 
     protected void startGo() {
@@ -14,6 +24,15 @@ public class Bus extends Car implements Competing{
     }
     protected void finishGo() {
         System.out.println("Тормози аккуратно, не бревна везёшь!");
+    }
+
+    @Override
+    protected void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println("Вместимость автобуса от " + capacity.getFrom() + " до " + capacity.getTo());
+        }
     }
 
     @Override

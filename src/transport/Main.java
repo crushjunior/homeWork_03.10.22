@@ -3,20 +3,20 @@ import driver.Driver;
 
 public class Main {
     public static void main(String[] args) {
-        PassengerCar oka = new PassengerCar("Лада", "Ока", 1.0);
-        PassengerCar subaru = new PassengerCar("Subaru", "Impreza", 2.4);
-        PassengerCar mitsu = new PassengerCar("Mitsubishi", "Lancer", 2.5);
-        PassengerCar bmw = new PassengerCar("BMW", "M5", 4.4);
+        PassengerCar oka = new PassengerCar("Лада", "Ока", 1.0, TypeOfBody.HATCHBACK);
+        PassengerCar subaru = new PassengerCar("Subaru", "Impreza", 2.4, TypeOfBody.SEDAN);
+        PassengerCar mitsu = new PassengerCar("Mitsubishi", "Lancer", 2.5, TypeOfBody.SEDAN);
+        PassengerCar bmw = new PassengerCar("BMW", "M5", 4.4, TypeOfBody.SEDAN);
 
-        CargoCar kamaz = new CargoCar("Камаз", "6520", 11.8);
-        CargoCar man = new CargoCar("MAN", "TGS", 9.0);
-        CargoCar scania = new CargoCar("Scania", "R420", 13.3);
-        CargoCar renault = new CargoCar("Renault", "Magnum", 12.8);
+        CargoCar kamaz = new CargoCar("Камаз", "6520", 11.8, TypeWeight.N1);
+        CargoCar man = new CargoCar("MAN", "TGS", 9.0, TypeWeight.N2);
+        CargoCar scania = new CargoCar("Scania", "R420", 13.3, TypeWeight.N3);
+        CargoCar renault = new CargoCar("Renault", "Magnum", 12.8, TypeWeight.N1);
 
-        Bus paz = new Bus("ПАЗ", "1234", 6.6);
-        Bus mers = new Bus("Mersedes", "Vito", 4.3);
-        Bus kia = new Bus("KIA", "Runner", 5.1);
-        Bus faw = new Bus("FAW", "Samurai", 3.9);
+        Bus paz = new Bus("ПАЗ", "1234", 6.6, Capacity.EXTRA_SMALL);
+        Bus mers = new Bus("Mersedes", "Vito", 4.3, Capacity.EXTRA_SMALL);
+        Bus kia = new Bus("KIA", "Runner", 5.1, Capacity.LARGE);
+        Bus faw = new Bus("FAW", "Samurai", 3.9, Capacity.EXTRA_LARGE);
 
         Driver<PassengerCar> sam = new Driver<>("Самойлов Антон Матвеевич", "B", 5);
         Driver<Bus> luk = new Driver<>("Лукашенко Юрий Кириллович", "С", 7);
@@ -40,5 +40,11 @@ public class Main {
         sam.finishGo(oka);
         sam.startGo(subaru);
         sam.refuel(mitsu);
+        System.out.println();
+        subaru.printType();
+        paz.printType();
+        man.printType();
+        faw.printType();
+        scania.printType();
     }
 }

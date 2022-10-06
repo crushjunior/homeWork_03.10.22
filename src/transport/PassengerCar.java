@@ -3,14 +3,19 @@ package transport;
 public class PassengerCar extends Car implements Competing{
     private static final int MAX_SPEED = 268;
     private static final double BEST_LAP = 1.21;
+    private TypeOfBody typeOfBody;
 
-    public enum TypeBody {SEDAN, HATCHBACK, COUPE, UNIVERSAL, OFFROAD, CROSSOVER,PICKUP, VAN, MINIVAN};
-
-
-    public PassengerCar(String brand, String model, Double engineVolume) {
+    public PassengerCar(String brand, String model, Double engineVolume, TypeOfBody typeOfBody) {
         super(brand, model, engineVolume);
+        setTypeOfBody(typeOfBody);
+    }
 
+    public TypeOfBody getTypeOfBody() {
+        return typeOfBody;
+    }
 
+    public void setTypeOfBody(TypeOfBody typeOfBody) {
+        this.typeOfBody = typeOfBody;
     }
 
     protected void startGo() {
@@ -18,6 +23,15 @@ public class PassengerCar extends Car implements Competing{
     }
     protected void finishGo() {
         System.out.println("Тормози!");
+    }
+
+    @Override
+    protected void printType() {
+        if (typeOfBody == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println("Тип кузова: " + getTypeOfBody());
+        }
     }
 
     @Override

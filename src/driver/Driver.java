@@ -48,6 +48,7 @@ public class Driver<D extends Car & Competing> {
 
     public void raceInfo(D car) {
         System.out.println("Водитель " + getFullName() + " управляет автомобилем " + car.getBrand() + " и будет участвовать в заезде.");
+
     }
 
     public void startGo(D car) {

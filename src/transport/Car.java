@@ -45,6 +45,7 @@ public abstract class Car {
 
     protected abstract void startGo();
     protected abstract void finishGo();
+    protected abstract void printType();
 
     @Override
     public boolean equals(Object o) {
